@@ -13,4 +13,9 @@ export default class API {
         return fetch("http://localhost:3002/api/v1/tasks/" + id, { method: 'DELETE', headers: header })
     }
 
+    static updateTask = (header, body, id) => {
+        let reqBody = JSON.stringify(body)
+        return fetch("http://localhost:3002/api/v1/tasks/" + id, { method: 'PUT', headers: header, body: reqBody })
+    }
+
 }
